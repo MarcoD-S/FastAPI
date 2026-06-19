@@ -8,8 +8,31 @@ fetch("http://127.0.0.1:8000/jogos")
 
             container.innerHTML += `
                 <div class="card">
-                    <h3>${jogo.nome}</h3>
-                    <p>${jogo.descricao}</p>
+
+                    <img
+                        src="http://127.0.0.1:8000${jogo.imagem}"
+                        alt="${jogo.nome}"
+                    >
+
+                    <div class="card-content">
+
+                        <h3>${jogo.nome}</h3>
+
+                        <div class="info">
+                            <span>🎮 ${jogo.genero}</span>
+                            <span>📅 ${jogo.ano}</span>
+                        </div>
+
+                        <p class="dev">
+                            Desenvolvedora: ${jogo.desenvolvedora}
+                        </p>
+
+                        <p class="descricao">
+                            ${jogo.descricao}
+                        </p>
+
+                    </div>
+
                 </div>
             `;
 
