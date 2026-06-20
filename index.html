@@ -10,38 +10,48 @@
 </head>
 <body>
 
-    <header>
+<header>
     <h1>IndieVerse</h1>
 </header>
 
 <main>
 
-    <section class="hero">
-        <div class="overlay">
-            <h1>IndieVerse</h1>
-            <p>Descubra os melhores jogos independentes já criados.</p>
-        </div>
-    </section>
-    <div class="controles">
+    <section class="hero" id="hero">
 
-    <input
-    type="text"
-    id="pesquisa"
-    placeholder="Pesquisar jogo..."
->
+    <div class="overlay">
 
-<button id="trocarLayout">
-    📋 Lista
-</button>
+        <h1 id="heroTitulo">
+            IndieVerse
+        </h1>
 
-<div id="jogos" class="jogos"></div>
+        <p id="heroDescricao">
+            Descubra os melhores jogos independentes já criados.
+        </p>
 
-</div>
+    </div>
+
+</section>
 
     <section class="catalogo">
+
         <h2>Jogos em Destaque</h2>
 
+        <div class="controles">
+
+            <input
+                type="text"
+                id="pesquisa"
+                placeholder="Pesquisar jogo..."
+            >
+
+            <button id="trocarLayout">
+                📋 Lista
+            </button>
+
+        </div>
+
         <div id="jogos" class="jogos"></div>
+
     </section>
 
 </main>
@@ -50,6 +60,7 @@
     <p>Um projeto produzido por: Marco Duarte</p>
 </footer>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>

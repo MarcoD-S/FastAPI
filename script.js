@@ -62,21 +62,55 @@ fetch("http://127.0.0.1:8000/jogos")
 
         renderizarJogos(jogos);
 
+        destaques = jogos.slice(0, 5);
+
+        atualizarHero();
+
+        setInterval(() => {
+
+            destaqueAtual++;
+
+            if(destaqueAtual >= destaques.length){
+                destaqueAtual = 0;
+            }
+
+            atualizarHero();
+
+        }, 5000);
+
     })
     .catch(error => {
         console.error(error);
     });
 
-document
-    .getElementById("pesquisa")
-    .addEventListener("input", e => {
+const hero = document.getElementById("hero");
+const heroTitulo = document.getElementById("heroTitulo");
+const heroDescricao = document.getElementById("heroDescricao");
 
-        const texto = e.target.value.toLowerCase();
+let destaqueAtual = 0;
+let destaques = [];
 
-        const filtrados = todosJogos.filter(jogo =>
-            jogo.nome.toLowerCase().includes(texto)
-        );
+function atualizarHero(){
 
-        renderizarJogos(filtrados);
+    const jogo = destaques[destaqueAtual];
 
-    });
+    hero.style.backgroundImage =
+    `url(http://127.0.0.1:8000${jogo.banner})`;
+
+    heroTitulo.textContent = jogo.nome;
+
+    heroDescricao.textContent = jogo.descricao;
+}
+atualizarHero();
+
+setInterval(() => {
+
+    destaqueAtual++;
+
+    if(destaqueAtual >= destaques.length){
+        destaqueAtual = 0;
+    }
+
+    atualizarHero();
+
+}, 5000);
